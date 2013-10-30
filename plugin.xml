@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="org.apache.cordova.phoneDialer"
+           id="org.apache.cordova.phoneDialer.PhoneDialer"
       version="0.0.1">
     <name>PhoneDialer</name>
     <description>PhoneDialer Plugin</description>
@@ -14,7 +14,6 @@
         <config-file target="config.xml" parent="/*">
 		    <feature name="PhoneDialer">
 			    <param name="ios-package" value="PhoneDialer"/>
-			    <param name="onload" value="true"/>
 		    </feature>
         </config-file>
 
