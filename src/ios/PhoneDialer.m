@@ -14,7 +14,7 @@
 @implementation PhoneDialer
 
 // 'number' param may be either an unescaped phone number or a tel: url
-- (void) dialPhone:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options {
+- (void) dial:(NSDictionary *)options {
     NSString* url;
     NSString* number = [options valueForKey:@"number"];
     if([number hasPrefix:@"tel:"]) {
@@ -33,5 +33,14 @@
         [Notpermitted show];
     }
 }
+-(void)dialPhone:(CDVInvokedUrlCommand *)command
+    {
+        
+       
+        [self dial:command.arguments[0]];
+       
+        
+        [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
+    }
 
 @end
